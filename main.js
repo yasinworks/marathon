@@ -21,7 +21,7 @@ function createPlayer(className, characterName, hp) {
         life = document.createElement('div'),
         name = document.createElement('div'),
         img = document.createElement('img'),
-        arena = document.querySelector('.arena1');
+        arena = document.querySelector('.arenas');
 
     parent.className = className
     progressbar.className = 'progressbar'
