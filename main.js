@@ -37,6 +37,8 @@ function createPlayer(className, characterName, hp) {
     character.prepend(img)
     parent.prepend(progressbar, character)
     arena.append(parent)
+
+    //for branch
 }
 
 createPlayer('player1', 'subzero', 100)
