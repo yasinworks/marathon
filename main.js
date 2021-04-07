@@ -30,16 +30,15 @@ function createPlayer(className, characterName, hp) {
     character.className = 'character'
     img.src = `http://reactmarathon-api.herokuapp.com/assets/${characterName}.gif`
 
+    life.style.width = `${hp}%`
+
     name.textContent = characterName
-    life.textContent = hp
 
     progressbar.prepend(life, name)
     character.prepend(img)
     parent.prepend(progressbar, character)
     arena.append(parent)
-
-    //for branch
 }
 
-createPlayer('player1', 'subzero', 100)
+createPlayer('player1', 'subzero', 50)
 createPlayer('player2', 'scorpion', 100)
