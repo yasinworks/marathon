@@ -1,12 +1,14 @@
 const player1 = {
+    player: 1,
     characterName: 'subzero',
-    hp: 50,
+    hp: 100,
     img: 'http://reactmarathon-api.herokuapp.com/assets/subzero.gif',
     weapon: ['knife', 'sword'],
     attack: () => console.log(player1.characterName, 'Figth')
 }
 
 const player2 = {
+    player: 2,
     characterName: 'SCORPION',
     hp: 100,
     img: 'http://reactmarathon-api.herokuapp.com/assets/scorpion.gif',
