@@ -1,3 +1,5 @@
+const actionButton = document.querySelector('.arenas .control .button')
+
 const player1 = {
     player: 1,
     characterName: 'subzero',
@@ -15,6 +17,40 @@ const player2 = {
     weapon: ['knife', 'sword'],
     attack: () => console.log(player2.characterName, 'Fight')
 }
+
+function playerWin(playerName) {
+    const winner = document.createElement('div')
+    winner.className = 'loseTitle'
+    winner.textContent = `${playerName} wins`
+
+    return winner
+}
+
+function changeHp(player) {
+    const arena = document.querySelector('.arenas')
+    const playerLife = document.querySelector(`.player${player.player} .life`)
+    const randomNumber = Math.random() * 20
+
+    console.log(player.characterName + ' - ' + randomNumber)
+    player.hp -= randomNumber
+    if (player.hp <= 0) {
+        playerLife.style.width = '0'
+        actionButton.disabled = true
+    } else {
+        playerLife.style.width = `${player.hp}%`
+    }
+
+    if (player1.hp <= 0) {
+        arena.append(playerWin(player2.characterName))
+    } else if (player2.hp <= 0) {
+        arena.append(playerWin(player1.characterName))
+    }
+}
+
+actionButton.addEventListener('click' ,() => {
+    changeHp(player1)
+    changeHp(player2)
+})
 
 function createPlayer(className, {characterName, hp, img}) {
 
